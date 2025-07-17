@@ -1,0 +1,62 @@
+/*
+  Component-specific styles for the Homepage Content Management form.
+  Reference global styles from src/styles.css for consistency:
+  - Typography (font-family, font-size, font-weight)
+  - Colors (e.g., --primary-color, --secondary-color, --text-color)
+  - Spacing (e.g., --spacing-sm, --spacing-md, --spacing-lg)
+  - Box shadows, border-radius, etc.
+*/
+
+:host {
+  display: block;
+  padding: var(--spacing-md); /* Example spacing */
+  color: var(--text-color); /* Example text color */
+}
+
+h2 {
+  font-family: var(--font-family-heading); /* Example heading font */
+  color: var(--primary-color); /* Example heading color */
+  margin-bottom: var(--spacing-lg); /* Example spacing below heading */
+}
+
+form div {
+  margin-bottom: var(--spacing-md); /* Space between form groups */
+}
+
+label {
+  display: block; /* Labels on their own line */
+  font-weight: bold; /* Bold labels */
+  margin-bottom: var(--spacing-sm); /* Space below label */
+  color: var(--secondary-text-color); /* Example label color */
+}
+
+input[type="text"],
+textarea {
+  width: 100%; /* Full width */
+  padding: var(--spacing-sm); /* Padding inside input/textarea */
+  border: 1px solid var(--border-color); /* Example border */
+  border-radius: var(--border-radius); /* Example border radius */
+  font-family: var(--font-family-body); /* Example body font */
+  font-size: var(--font-size-base); /* Example base font size */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+textarea {
+  min-height: 150px; /* Minimum height for textarea */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color); /* Example button background */
+  color: var(--button-text-color); /* Example button text color */
+  padding: var(--spacing-md) var(--spacing-lg); /* Button padding */
+  border: none; /* Remove default border */
+  border-radius: var(--border-radius); /* Example border radius */
+  cursor: pointer; /* Indicate it's clickable */
+  font-size: var(--font-size-base); /* Example button font size */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-color-dark); /* Example hover effect */
+}

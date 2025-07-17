@@ -1,0 +1,41 @@
+<div *ngIf="isLoading"><p>Loading...</p></div>
+<div *ngIf="error"><p>Error: {{ error.message }}</p></div>
+
+<div *ngIf="homepageConfig">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div *ngIf="homepageConfig.heroImages && homepageConfig.heroImages.length > 0">
+      <img [src]="homepageConfig.heroImages[0]" alt="Hero Image">
+      <div class="hero-text" *ngIf="homepageConfig.aboutText">
+        <h1>{{ homepageConfig.aboutText }}</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Galleries Section -->
+  <section class="featured-galleries-section">
+    <h2>Featured Work</h2>
+    <div class="gallery-previews">
+      <div *ngFor="let galleryData of featuredGalleriesData" class="gallery-preview">
+        <h3>{{ galleryData.name }}</h3>
+        <div class="gallery-images">
+          <!-- Displaying up to 3 images per featured gallery -->
+          <div *ngFor="let image of galleryData.images | slice:0:3" class="gallery-thumbnail">
+            <img [src]="image.url" [alt]="image.caption">
+          </div>
+        </div>
+        <!-- Link to full gallery page -->
+        <a [routerLink]="['/admin/galleries', galleryData.id]">View Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>Our Story</h2>
+    <p *ngIf="homepageConfig && homepageConfig.aboutText">{{ homepageConfig.aboutText }}</p>
+  </section>
+
+  <!-- Add other sections here (e.g., Contact) -->
+
+</div>

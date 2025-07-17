@@ -1,0 +1,19 @@
+<h2>Manage Contact Information</h2>
+
+<form (ngSubmit)="saveContent()" #contactForm="ngForm">
+ <ng-container *ngIf="contentItem?.contactInfo">
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="contactInfo.email" required>
+    </div>
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" [(ngModel)]="contactInfo.phone">
+    </div>
+    <div>
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" [(ngModel)]="contactInfo.address"></textarea>
+    </div>
+ </ng-container>
+ <button type="submit" [disabled]="!contactForm.form.valid">Save Contact Info</button>
+</form>

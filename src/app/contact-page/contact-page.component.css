@@ -1,0 +1,55 @@
+/*
+  Component-specific styles for the Contact Page.
+  Reference global styles from src/styles.css for consistency.
+
+*/
+/* Example: Style the main container */
+
+.contact-page-container {
+  max-width: var(--container-max-width);
+  margin: var(--spacing-large) auto;
+  padding: var(--spacing-medium);
+}
+
+
+/* Example: Style headings */
+
+h1 {
+  color: var(--color-primary);
+  font-family: var(--font-family-heading);
+  margin-bottom: var(--spacing-medium);
+}
+
+
+/* Example: Style form elements or contact info display */
+
+.contact-info,
+.contact-form {
+  margin-top: var(--spacing-medium);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: var(--spacing-small);
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-medium);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.contact-form button {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: var(--spacing-medium) var(--spacing-large);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-large);
+}
+

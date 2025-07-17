@@ -1,0 +1,15 @@
+<h2>Manage About Page Content</h2>
+
+<ng-container *ngIf="contentItem">
+  <form #contentForm="ngForm" (ngSubmit)="saveContent()">
+    <div>
+      <label for="title">Title:</label>
+      <input id="title" name="title" [(ngModel)]="contentItem.title">
+    </div>
+    <div>
+      <label for="content">Content:</label>
+      <textarea id="content" name="content" [(ngModel)]="contentItem.content"></textarea>
+    </div>
+    <button type="submit">Save Content</button>
+  </form>
+</ng-container>

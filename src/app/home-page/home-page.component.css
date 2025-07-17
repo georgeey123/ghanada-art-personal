@@ -1,0 +1,58 @@
+/*
+  Component-specific styles for the Contact Page.
+
+  Reference global styles from src/styles.css for consistency:
+  - Typography (font-family, font-size, font-weight)
+  - Colors (e.g., --primary-color, --secondary-color, --text-color)
+  - Spacing (e.g., --spacing-sm, --spacing-md, --spacing-lg)
+  - Box shadows, border-radius, etc.
+*/
+
+/* Add styles for form elements, input fields, buttons, etc. */
+/* Example: */
+/* .contact-form { ... } */
+:host {
+  display: block; /* Or adjust display as needed */
+  padding: var(--spacing-md);
+}
+
+/* Or if using a main container div in the template: */
+/*
+.container {
+  padding: var(--spacing-md);
+}
+*/
+
+.hero-section {
+  position: relative;
+  height: 60vh; /* Adjust as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-primary-color); /* Example: White text on a dark image */
+  text-align: center;
+}
+
+.hero-section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Place behind text */
+}
+
+.hero-text {
+  z-index: 1;
+  padding: var(--spacing-md);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+}
+
+.featured-galleries-section,
+.about-section {
+  padding: var(--spacing-lg) var(--spacing-md);
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+}

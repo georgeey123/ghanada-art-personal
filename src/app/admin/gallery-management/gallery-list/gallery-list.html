@@ -1,0 +1,18 @@
+<h2>Gallery Management</h2>
+
+<button (click)="addGallery()">Add New Gallery</button>
+
+<form *ngIf="showGalleryForm" (submit)="saveGallery()">
+  <label for="galleryName">Gallery Name:</label>
+  <input type="text" id="galleryName" [(ngModel)]="newGalleryName" name="newGalleryName" required>
+  <button type="submit">Save Gallery</button>
+  <button type="button" (click)="cancelEdit()">Cancel</button>
+</form>
+
+<ul>
+  <li *ngFor="let gallery of galleries">
+    {{ gallery.name }}
+    <button (click)="editGallery(gallery)">Edit</button>
+    <button (click)="deleteGallery(gallery.id)">Delete</button>
+  </li>
+</ul>

@@ -1,0 +1,11 @@
+<h2>Manage Footer Content</h2>
+
+<ng-container *ngIf="contentItem">
+  <form #footerForm="ngForm" (ngSubmit)="saveContent()">
+    <div>
+      <label for="footerText">Footer Text:</label>
+      <textarea id="footerText" name="footerText" [(ngModel)]="contentItem.content" required></textarea>
+    </div>
+    <button type="submit" [disabled]="!footerForm.form.valid">Save Footer</button>
+  </form>
+</ng-container>

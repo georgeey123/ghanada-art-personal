@@ -1,0 +1,46 @@
+/*
+  Component-specific styles for the Admin Layout.
+  Reference global styles from src/styles.css for consistency.
+*/
+
+/* Example: Basic layout for header, main, and footer */
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  padding: var(--spacing-small);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: var(--spacing-small);
+}
+
+nav a {
+  color: var(--color-text-light);
+  text-decoration: none;
+}
+
+main {
+  flex-grow: 1;
+  padding: var(--spacing-medium);
+}
+
+footer {
+  background-color: var(--color-grey-light);
+  padding: var(--spacing-small);
+  text-align: center;
+}
+

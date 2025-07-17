@@ -1,0 +1,231 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+ * Global Styles for Photography Website (Frontend & Admin)
+ * Based on: https://bradandjen.com/ aesthetic
+ */
+
+/* --- 1. CSS Variables for Theme --- */
+:root {
+    /* Colors */
+    --primary-text-color: #333;
+    --secondary-text-color: #666;
+    --light-text-color: #f0f0f0;
+    --accent-color: #b0b0b0; /* Subtle greyish accent, or could be a very muted blue/green if desired */
+    --background-color-light: #ffffff;
+    --background-color-dark: #f8f8f8; /* For slight contrast, e.g., admin background or sections */
+    --border-color: #e0e0e0;
+    --header-footer-bg: #ffffff; /* Typically white or very light */
+    --button-bg: #333;
+    --button-text: #ffffff;
+    --button-hover-bg: #555;
+
+    /* Typography */
+    --font-primary: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean sans-serif */
+    --font-secondary: 'Playfair Display', serif; /* For decorative headings, if desired (add to index.html/Google Fonts) */
+    --base-font-size: 16px;
+    --line-height: 1.6;
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 48px;
+    --spacing-xl: 80px;
+
+    /* Border Radius */
+    --border-radius-sm: 4px;
+
+    /* Box Shadow */
+    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 2. Basic Reset / Normalize (Minimal) --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--base-font-size); /* Base for rem units */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: var(--line-height);
+    color: var(--primary-text-color);
+    background-color: var(--background-color-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 3. Base Typography Styles --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary); /* Keeping it clean, can switch to --font-secondary for more flair */
+    color: var(--primary-text-color);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+h1 { font-size: 3em; } /* ~48px */
+h2 { font-size: 2.25em; } /* ~36px */
+h3 { font-size: 1.75em; } /* ~28px */
+h4 { font-size: 1.25em; } /* ~20px */
+h5 { font-size: 1em; } /* ~16px */
+h6 { font-size: 0.875em; } /* ~14px */
+
+p {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1em;
+    color: var(--secondary-text-color);
+}
+
+a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 4. General Layout & Utility Classes --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-padding {
+    padding: var(--spacing-lg) 0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-layout {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-text-color);
+    border: 1px solid var(--primary-text-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-text-color);
+    color: var(--button-text);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--primary-text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-xs);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-primary);
+    font-size: 1em;
+    color: var(--primary-text-color);
+    background-color: var(--background-color-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(var(--accent-color), 0.2);
+}
+
+/* --- 5. Media Queries for Responsiveness --- */
+
+/* Tablet & Smaller Desktops */
+@media (max-width: 1024px) {
+    :root {
+        --base-font-size: 15px;
+        --spacing-lg: 32px;
+        --spacing-xl: 60px;
+    }
+
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    :root {
+        --base-font-size: 14px;
+        --spacing-sm: 12px;
+        --spacing-md: 20px;
+        --spacing-lg: 24px;
+        --spacing-xl: 40px;
+    }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.75em; }
+    h3 { font-size: 1.5em; }
+
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+}

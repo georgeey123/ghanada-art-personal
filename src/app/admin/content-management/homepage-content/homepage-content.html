@@ -1,0 +1,30 @@
+<h2>Manage Homepage Content</h2>
+
+<div *ngIf="isLoading"><p>Loading...</p></div>
+<div *ngIf="error"><p>Error: {{ error.message }}</p></div>
+
+<div *ngIf="homepageConfig">
+  <form (ngSubmit)="saveContent()">
+    <!-- About Text -->
+    <div>
+      <label for="aboutText">About Text:</label>
+      <textarea id="aboutText" name="aboutText" [(ngModel)]="homepageConfig.aboutText"></textarea>
+    </div>
+
+    <!-- Hero Images (Basic Example - you'll need more complex logic for arrays) -->
+    <div>
+      <label for="heroImages">Hero Images (URLs, comma-separated):</label>
+      <input type="text" id="heroImages" name="heroImages" [(ngModel)]="homepageConfig.heroImagesString">
+      <!-- You'll need logic in the component to convert between string and array -->
+    </div>
+
+    <!-- Featured Galleries (Basic Example - you'll need more complex logic for arrays) -->
+    <div>
+      <label for="featuredGalleries">Featured Galleries (IDs, comma-separated):</label>
+      <input type="text" id="featuredGalleries" name="featuredGalleries" [(ngModel)]="homepageConfig.featuredGalleriesString">
+      <!-- You'll need logic in the component to convert between string and array -->
+    </div>
+
+    <button type="submit">Save Homepage Content</button>
+  </form>
+</div>

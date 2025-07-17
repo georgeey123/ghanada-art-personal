@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  padding: var(--spacing-md);
+  /* Inherit colors and background from global styles or layout component */
+  /* color: var(--primary-text-color); */
+  /* background-color: var(--background-color); */
+}
+
+/* Example: Style for the main heading using a global variable */
+h2 {
+  color: var(--primary-color); /* Assuming --primary-color is used for main headings */
+  margin-bottom: var(--spacing-md);
+}
+
+p {
+  line-height: 1.6;
+  /* Example: Style for paragraphs */
+}
+/* Add specific styles for images, sections, or other elements in the about page template */

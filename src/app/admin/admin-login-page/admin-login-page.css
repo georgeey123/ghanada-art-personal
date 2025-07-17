@@ -1,0 +1,79 @@
+/* src/app/admin/admin-login-page/admin-login-page.css */
+/*
+  src/app/admin/admin-login-page/admin-login-page.css
+
+  This file contains styles specific to the Admin Login Page component.
+
+  Relevant global styles from src/styles.css that might be useful:
+  - CSS Variables (e.g., --primary-color, --background-color, --spacing-medium) for consistent theming and spacing.
+  - Font family definitions.
+  - Basic body or html styles that affect overall page layout.
+
+  Component-specific styles needed here:
+  - Layout for the login container and form.
+  - Styling for form elements (inputs, labels, buttons).
+*/
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.login-form {
+  background-color: var(--surface-color);
+  padding: var(--spacing-large);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-large);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-medium);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-small);
+  color: var(--secondary-text-color);
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: var(--spacing-small);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-small);
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.login-button {
+  width: 100%;
+  padding: var(--spacing-medium);
+  background-color: var(--accent-color);
+  color: var(--on-accent-color);
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: var(--accent-dark-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-top: var(--spacing-medium);
+  text-align: center;
+}

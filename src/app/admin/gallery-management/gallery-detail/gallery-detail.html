@@ -1,0 +1,32 @@
+<h2>Images for {{ gallery?.name }}</h2>
+
+<div class="upload-section">
+  <h3>Upload New Image</h3>
+  <input type="file" accept="image/*" (change)="onFileSelected($event)">
+  <p *ngIf="selectedFile">{{ selectedFile.name }}</p>
+  <input type="text" placeholder="Caption (Optional)" [(ngModel)]="newImageCaption">
+  <button (click)="uploadImage()" [disabled]="!selectedFile">Upload</button>
+</div>
+
+<div class="image-list">
+  <h3>Existing Images</h3>
+  <div *ngIf="images.length === 0">No images in this gallery yet.</div>
+  <div *ngFor="let image of images">
+    <img [src]="image.url" alt="{{ image.caption }}" width="100">
+    <p>{{ image.caption }}</p>
+    <button (click)="editImage(image)">Edit</button>
+    <button (click)="deleteImage(image.id, image.url)">Delete</button>
+  </div>
+</div>
+
+<div *ngIf="editingImage" class="edit-form">
+  <h3>Edit Image</h3>
+  <form (submit)="saveImageEdit()">
+    <label for="editCaption">Caption:</label>
+    <input id="editCaption" type="text" [(ngModel)]="editingImage.caption" name="editCaption">
+    <label for="editOrder">Order:</label>
+    <input id="editOrder" type="number" [(ngModel)]="editingImage.order" name="editOrder">
+    <button type="submit">Save</button>
+    <button type="button" (click)="cancelImageEdit()">Cancel</button>
+  </form>
+</div>

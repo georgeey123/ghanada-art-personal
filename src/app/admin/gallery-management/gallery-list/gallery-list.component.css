@@ -1,0 +1,36 @@
+/*
+  Component-specific styles for the Gallery List page.
+  Reference global styles in src/styles.css for consistent theming (e.g., colors, typography, spacing).
+*/
+
+/* Example: Using global spacing and typography */
+
+.gallery-management h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.gallery-list {
+    list-style: none;
+}
+
+.gallery-list-item {
+    background-color: var(--background-color-dark);
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+}
+
+/* Example: Using global text color */
+.gallery-list-item span {
+    font-weight: 600;
+    color: var(--primary-text-color);
+}
+
+/* Example: Styling buttons - consider using global button styles if defined */
+.gallery-actions .btn {
+    margin-left: var(--spacing-xs);
+}
